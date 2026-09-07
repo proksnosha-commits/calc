@@ -3454,19 +3454,7 @@ function buildClientHTML(){
   ${state.note && state.note.trim() ? `<div class="foot" style="border-top:1px solid #e6dcc8; padding-top:14px;"><b>Примечание:</b> ${escapeHtml(state.note.trim())}</div>` : ''}
   <div class="foot">Расчёт предварительный и не является публичной офертой. Точная стоимость подтверждается менеджером при оформлении заказа.<br>Рахат Бани · г. Уфа, ул. 2-я Дорожная 1/1</div>
   <div class="noprint"><button onclick="window.print()">Печать / Сохранить в PDF</button></div>
-  <script>
-  // Этот скрипт будет передавать точную высоту калькулятора на Тильду
-  function sendHeight() {
-    const height = document.documentElement.scrollHeight || document.body.scrollHeight;
-    window.parent.postMessage({ type: 'resize-calc', height: height }, '*');
-  }
-  // Отправляем высоту при загрузке и изменении размеров экрана
-  window.addEventListener('load', sendHeight);
-  window.addEventListener('resize', sendHeight);
-  // На всякий случай отправляем повторно через секунду
-  setTimeout(sendHeight, 1000);
-</script>
-</body></html>`;
+  </body></html>`;
 }
 function openClientVersion(){
   const html=buildClientHTML();
